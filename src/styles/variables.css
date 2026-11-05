@@ -1,23 +1,25 @@
 :root {
-  --color-bg: #FAFAFA;
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #F4F4F5;
-  --color-border: #E4E4E7;
-  --color-text: #18181B;
-  --color-text-muted: #52525B;
-  --color-primary: #4F46E5;
-  --color-primary-hover: #4338CA;
-  --color-primary-soft: #EEF2FF;
-  --color-on-primary: #FFFFFF;
-  --color-danger: #DC2626;
-  --color-danger-hover: #B91C1C;
+	--color-bg: #fafafa;
+	--color-surface: #ffffff;
+	--color-surface-muted: #f4f4f5;
+	--color-border: #e4e4e7;
+	--color-text: #18181b;
+	--color-text-muted: #52525b;
+	--color-primary: #4f46e5;
+	--color-primary-hover: #4338ca;
+	--color-primary-soft: #eef2ff;
+	--color-on-primary: #ffffff;
+	--color-danger: #dc2626;
+	--color-danger-hover: #b91c1c;
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --radius-pill: 999px;
+	--font-sans: "Inter", system-ui, sans-serif;
+	--radius-sm: 8px;
+	--radius-md: 10px;
+	--radius-lg: 12px;
+	--radius-pill: 999px;
 
-  font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	font-family:
+		system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

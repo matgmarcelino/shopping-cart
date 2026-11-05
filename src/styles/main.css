@@ -1,33 +1,33 @@
 main {
-    display: flex;
-    flex-direction: column;
-    padding: 5rem;
-    gap: 5rem;
-    background-color: var(--color-bg);
-    overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 5rem;
+	gap: 5rem;
+	background-color: var(--color-bg);
+	overflow-y: auto;
 }
 
 main.shop-page,
 main.cart-page {
-    padding: 2rem 5rem;
-    gap: 2rem;
+	padding: 2rem 5rem;
+	gap: 2rem;
 }
 
 main.error-page {
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .main-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: var(--color-text-muted);
-    font-weight: 300;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: var(--color-text-muted);
+	font-weight: 300;
 }
 
 #root {
-    display: grid;
-    grid-template-rows: minmax(0, 1fr) minmax(0, 9fr);
+	display: grid;
+	grid-template-rows: minmax(0, 1fr) minmax(0, 9fr);
 }
