@@ -5,18 +5,21 @@ import HomePage from "./components/homepage/HomePage";
 import Layout from "./components/Layout";
 import ShopPage from "./components/shoppage/ShopPage";
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		Component: Layout,
-		errorElement: <ErrorPage />,
-		children: [
-			{ index: true, Component: HomePage },
-			{ path: "shop", Component: ShopPage },
-			{ path: "cart", Component: CartPage },
-			{ path: "*", Component: ErrorPage },
-		],
-	},
-]);
+const router = createBrowserRouter(
+	[
+		{
+			path: "/",
+			Component: Layout,
+			errorElement: <ErrorPage />,
+			children: [
+				{ index: true, Component: HomePage },
+				{ path: "shop", Component: ShopPage },
+				{ path: "cart", Component: CartPage },
+				{ path: "*", Component: ErrorPage },
+			],
+		},
+	],
+	{ basename: import.meta.env.BASE_URL },
+);
 
 export default router;
