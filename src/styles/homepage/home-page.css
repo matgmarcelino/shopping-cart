@@ -17,7 +17,7 @@
 .hero-title {
 	color: var(--color-text);
 	font-weight: 700;
-	font-size: 5rem;
+	font-size: clamp(2.5rem, 9vw, 5rem);
 	line-height: 1;
 	width: 50%;
 }
@@ -25,13 +25,14 @@
 .hero-lead {
 	color: var(--color-text-muted);
 	font-weight: 300;
-	font-size: 2rem;
+	font-size: clamp(1.25rem, 4vw, 2rem);
 	line-height: 1.25;
 	width: 60%;
 }
 
 .hero-actions {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
@@ -72,7 +73,8 @@
 
 .features-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	/* min() lets a column shrink below 300px when the screen is narrower */
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 	list-style-type: none;
 	gap: 2rem;
 }
@@ -84,5 +86,17 @@
 
 	.hero-lead {
 		width: 90%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.hero-title,
+	.hero-lead {
+		width: 100%;
+	}
+
+	.btn {
+		padding: 0.75rem 1.25rem;
+		font-size: 1rem;
 	}
 }

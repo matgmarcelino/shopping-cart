@@ -1,15 +1,16 @@
 main {
 	display: flex;
 	flex-direction: column;
-	padding: 5rem;
-	gap: 5rem;
+	/* Scale spacing with the screen: 1rem on phones up to 5rem on desktop */
+	padding: clamp(1.5rem, 6vw, 5rem) clamp(1rem, 6vw, 5rem);
+	gap: clamp(2.5rem, 6vw, 5rem);
 	background-color: var(--color-bg);
 	overflow-y: auto;
 }
 
 main.shop-page,
 main.cart-page {
-	padding: 2rem 5rem;
+	padding: 2rem clamp(1rem, 6vw, 5rem);
 	gap: 2rem;
 }
 
@@ -29,5 +30,6 @@ main.error-page {
 
 #root {
 	display: grid;
-	grid-template-rows: minmax(0, 1fr) minmax(0, 9fr);
+	/* Navbar takes its natural height; main fills the rest */
+	grid-template-rows: auto minmax(0, 1fr);
 }
