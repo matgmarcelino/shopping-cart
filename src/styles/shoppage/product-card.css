@@ -1,0 +1,69 @@
+.shop-card {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr)); /* two equal halves */
+    height: 32rem; /* halves need a defined height to split */
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    overflow: hidden; /* keep children inside the rounded corners */
+    background-color: var(--color-surface-muted);
+}
+
+.shop-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* fit the whole image without distortion */
+    padding: 1rem;
+}
+
+.shop-info {
+    background-color: var(--color-surface);
+    padding: 1rem;
+    overflow: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 2fr;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text)
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+}
+
+.product-price-field {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; 
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    align-items: stretch; /* children fill the full row height */
+}
+
+.product-btn {
+    font-size: 1.75rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    height: 100%;
+}
+
+.product-price-input {
+    width: 100%;
+    min-width: 0; /* let the input shrink below its default intrinsic width */
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0;
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-top: none;
+    border-bottom: none;
+}
+
+.product-price-input:focus {
+    outline: none;
+}

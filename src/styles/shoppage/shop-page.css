@@ -1,0 +1,15 @@
+.shop-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.shop-title {
+    font-size: 3rem;
+}
+
+.shop-lead {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+}

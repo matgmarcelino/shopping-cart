@@ -1,0 +1,138 @@
+.cart-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(16rem, 3fr);
+    gap: 4rem;
+    align-items: start; /* summary keeps its own height instead of stretching */
+}
+
+.cart-layout > section {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+/* Items column */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    background-color: var(--color-surface-muted);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.cart-layout footer {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    color: var(--color-primary);
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.cart-link:hover {
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary-hover);
+}
+
+.cart-link span {
+    transition: transform 200ms ease;
+}
+
+.cart-link:hover span {
+    transform: translateX(-0.25rem);
+}
+
+/* Summary column */
+.summary {
+    position: sticky; /* stays in view while scrolling a long cart */
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.summary h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.summary dl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.summary dl > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.summary dt {
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.summary dd {
+    color: var(--color-text);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.summary dl > .summary-total {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 1.5rem;
+}
+
+.summary-total dt {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.summary-total dd {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .summary {
+        position: static;
+    }
+}

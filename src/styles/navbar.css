@@ -1,0 +1,90 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.link-group {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.link-group > * {
+    position: relative;
+    isolation: isolate;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    transition: color 200ms ease;
+}
+
+.link-group > *:hover,
+.link-group .active {
+    color: var(--color-text);
+}
+
+.nav-pill {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-color: var(--color-surface-muted);
+}
+
+/* Each label gets its own unique name so it's lifted into the
+   view-transition overlay alongside the pill (names must be unique) */
+.nav-label-home { view-transition-name: nav-label-home; }
+.nav-label-shop { view-transition-name: nav-label-shop; }
+.nav-label-cart { view-transition-name: nav-label-cart; }
+
+::view-transition-group(nav-pill) {
+    animation-duration: 350ms;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Keep the labels above the sliding pill during the transition */
+::view-transition-group(nav-label-home),
+::view-transition-group(nav-label-shop),
+::view-transition-group(nav-label-cart) {
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
+.nav-label-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-label-cart .items-in-cart {
+    padding: 0 1rem;
+    border-radius: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-primary-soft);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.logo {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
